@@ -1,9 +1,13 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ButtonState = Microsoft.Xna.Framework.Input.ButtonState;
+using Color = Microsoft.Xna.Framework.Color;
 using Keys = Microsoft.Xna.Framework.Input.Keys;
+using Point = Microsoft.Xna.Framework.Point;
+using Rectangle = Microsoft.Xna.Framework.Rectangle;
 namespace JewelJam
 {
     public class JewelJam : Game
@@ -12,7 +16,9 @@ namespace JewelJam
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
         private Texture2D backgroundTexture;
+        private Texture2D cursorTexture;
         private Rectangle backgroundRectangle;
+
         Point gameWorldSize, windowSize;
         const int DEFAULT_WINDOW_WIDTH = 1024;
         const int DEFAULT_WINDOW_HEIGHT = 768;
@@ -38,7 +44,7 @@ namespace JewelJam
             inputHandler = new InputHandler();
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+            IsMouseVisible = false;
         }
         protected override void Initialize()
         {
@@ -48,6 +54,7 @@ namespace JewelJam
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             backgroundTexture = Content.Load<Texture2D>("spr_background");
+            cursorTexture = Content.Load<Texture2D>("pickaxe");
             windowSize = new Point(DEFAULT_WINDOW_WIDTH, DEFAULT_WINDOW_HEIGHT);
             gameWorldSize = new Point(backgroundTexture.Width, backgroundTexture.Height);
             backgroundRectangle = new Rectangle(0, 0, backgroundTexture.Width, backgroundTexture.Height);
@@ -68,9 +75,10 @@ namespace JewelJam
         }
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, spriteScaleMatrix);
             spriteBatch.Draw(backgroundTexture, backgroundRectangle, Color.White);
+            spriteBatch.Draw(cursorTexture, ScreenToGameWorld(inputHandler.MousePosition), Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }
@@ -126,6 +134,16 @@ namespace JewelJam
             viewport.Y = (windowSize.Y - viewport.Height) / 2;
 
             return viewport;
+        }
+
+        /// <summary>
+        /// This method takes a position in a screen coordinates as a parameter and returns the matching position in gameWorld coordinates
+        /// </summary>
+        private Vector2 ScreenToGameWorld(Vector2 screenPosition)
+        {
+            Vector2 viewportTopLeft = new Vector2(GraphicsDevice.Viewport.X, GraphicsDevice.Viewport.Y);
+            float screenToWorldScale = (float)gameWorldSize.X / (float)GraphicsDevice.Viewport.Width;
+            return (screenPosition - viewportTopLeft) * screenToWorldScale;
         }
         #endregion
     }
