@@ -4,7 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/spr_background.jpg</File>
+    <File>c:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/spr_background.jpg</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
