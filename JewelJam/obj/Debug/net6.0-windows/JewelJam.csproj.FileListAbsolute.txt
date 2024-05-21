@@ -38,3 +38,6 @@ C:\Users\jorda\source\repos\CSHARP\LearningCSharpByProgrammingGames\MatchThree\J
 C:\Users\jorda\source\repos\CSHARP\LearningCSharpByProgrammingGames\MatchThree\JewelJam\obj\Debug\net6.0-windows\ref\JewelJam.dll
 C:\Users\jorda\source\repos\CSHARP\LearningCSharpByProgrammingGames\MatchThree\JewelJam\obj\Debug\net6.0-windows\JewelJam.sourcelink.json
 c:\Users\jorda\source\repos\CSHARP\LearningCSharpByProgrammingGames\MatchThree\JewelJam\bin\Debug\net6.0-windows\Content\pickaxe.xnb
+c:\Users\jorda\source\repos\CSHARP\LearningCSharpByProgrammingGames\MatchThree\JewelJam\bin\Debug\net6.0-windows\Content\spr_single_jewel0.xnb
+c:\Users\jorda\source\repos\CSHARP\LearningCSharpByProgrammingGames\MatchThree\JewelJam\bin\Debug\net6.0-windows\Content\spr_single_jewel1.xnb
+c:\Users\jorda\source\repos\CSHARP\LearningCSharpByProgrammingGames\MatchThree\JewelJam\bin\Debug\net6.0-windows\Content\spr_single_jewel2.xnb

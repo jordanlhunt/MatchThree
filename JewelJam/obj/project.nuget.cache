@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TXnEctMoMEQXS8zkLC4hKyKjll5KwAwUnIjCY+dA8+i8ttkv0h99YuVb1U3St4EO+j0Vfz9pPb1x4iuIa/IEeg==",
+  "dgSpecHash": "P/vNLDxRpm42wm5pykMjojyM6P7YWmRSjpFVFx10bJAqu6P1D0ePAhphrbakgZKs1Py5LE0F36cOINnY0kKymA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\JewelJam.csproj",
+  "projectFilePath": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\JewelJam.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jorda\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\jorda\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
