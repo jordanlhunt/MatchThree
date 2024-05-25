@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 namespace JewelJam
 {
-    class InputHandler
+    public class InputHandler
     {
         #region Fields
         private KeyboardState currentKeyBoardState;
