@@ -2,10 +2,11 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using Keys = Microsoft.Xna.Framework.Input.Keys;
 using Point = Microsoft.Xna.Framework.Point;
 namespace JewelJam;
-public class ExtendedGame : JewelJam
+public class ExtendedGame : Game
 {
     #region Member Variables
     // Standard Monogame objects for sprites and graphics
@@ -66,14 +67,14 @@ public class ExtendedGame : JewelJam
         ContentManager = Content;
         IsFullScreen = false;
     }
-    protected override void Update()
+    protected override void Update(GameTime gameTime)
     {
         HandleInput();
     }
     protected virtual void HandleInput()
     {
         inputHandler.Update();
-        if (inputHandler.IsKeyPressed(Keys.Escape))
+        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape) || inputHandler.IsKeyPressed(Keys.Escape))
         {
             Exit();
         }
@@ -82,9 +83,21 @@ public class ExtendedGame : JewelJam
         {
             IsFullScreen = !IsFullScreen;
         }
+
+
+
+    }
+    /// <summary>
+    /// This method takes a position in a screen coordinates as a parameter and returns the matching position in gameWorld coordinates
+    /// </summary>
+    public Vector2 ScreenToGameWorld(Vector2 screenPosition)
+    {
+        Vector2 viewportTopLeft = new Vector2(GraphicsDevice.Viewport.X, GraphicsDevice.Viewport.Y);
+        float screenToWorldScale = (float)gameWorldSize.X / (float)GraphicsDevice.Viewport.Width;
+        return (screenPosition - viewportTopLeft) * screenToWorldScale;
     }
     #endregion
-    #region  Private Methods
+    #region Private Methods
     /// <summary>
     /// Scales the window to the desired size, and calculates how the game world should be scaled to fit inside that window.
     /// </summary>
@@ -127,14 +140,6 @@ public class ExtendedGame : JewelJam
         viewport.Y = (windowSize.Y - viewport.Height) / 2;
         return viewport;
     }
-    /// <summary>
-    /// This method takes a position in a screen coordinates as a parameter and returns the matching position in gameWorld coordinates
-    /// </summary>
-    private Vector2 ScreenToGameWorld(Vector2 screenPosition)
-    {
-        Vector2 viewportTopLeft = new Vector2(GraphicsDevice.Viewport.X, GraphicsDevice.Viewport.Y);
-        float screenToWorldScale = (float)gameWorldSize.X / (float)GraphicsDevice.Viewport.Width;
-        return (screenPosition - viewportTopLeft) * screenToWorldScale;
-    }
+
     #endregion
 }

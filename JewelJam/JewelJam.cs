@@ -11,15 +11,12 @@ using Point = Microsoft.Xna.Framework.Point;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
 namespace JewelJam
 {
-    public class JewelJam : Game
+    public class JewelJam : ExtendedGame
     {
         #region Member Variables
-        private GraphicsDeviceManager graphics;
-        private SpriteBatch spriteBatch;
         private Texture2D backgroundTexture;
         private Texture2D cursorTexture;
         private Rectangle backgroundRectangle;
-        Point gameWorldSize, windowSize;
         Texture2D[] jewelsArray;
         const int DEFAULT_WINDOW_WIDTH = 1024;
         const int DEFAULT_WINDOW_HEIGHT = 768;
@@ -27,33 +24,14 @@ namespace JewelJam
         const int GRID_HEIGHT = 10;
         const int CELL_SIZE = 85;
         static Vector2 GRID_OFFSET = new Vector2(85, 150);
-        private Matrix spriteScaleMatrix;
-        private InputHandler inputHandler;
         static Random randomNumberGenerator;
         int[,] gridOfJewels;
-        #endregion
-        #region Properties
-        bool IsFullScreen
-        {
-            get
-            {
-                return graphics.IsFullScreen;
-            }
-            set
-            {
-                ApplyResolutionSettings(value);
-            }
-        }
         #endregion
         #region Public Methods
         public JewelJam()
         {
-            inputHandler = new InputHandler();
-            graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
             IsMouseVisible = false;
             gridOfJewels = new int[GRID_WIDTH, GRID_HEIGHT];
-            randomNumberGenerator = new Random();
             jewelsArray = new Texture2D[3];
             PopulateGridOfJewels();
         }
@@ -76,20 +54,10 @@ namespace JewelJam
         }
         protected override void Update(GameTime gameTime)
         {
-            inputHandler.Update();
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            {
-                Exit();
-            }
-            if (inputHandler.IsKeyPressed(Keys.F5))
-            {
-                IsFullScreen = !IsFullScreen;
-            }
             if (inputHandler.IsKeyPressed(Keys.Space))
             {
                 MoveGridOfJewelsRowsDown();
             }
-
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
@@ -104,57 +72,7 @@ namespace JewelJam
         }
         #endregion
         #region Private Methods
-        /// <summary>
-        /// Scales the window to the desired size, and calculates how the game world should be scaled to fit inside that window.
-        /// </summary>
-        private void ApplyResolutionSettings(bool isFullScreen)
-        {
-            graphics.IsFullScreen = isFullScreen;
-            Point screenSize;
-            if (isFullScreen)
-            {
-                screenSize = new Point(GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height);
-            }
-            else
-            {
-                screenSize = windowSize;
-            }
-            graphics.PreferredBackBufferWidth = screenSize.X;
-            graphics.PreferredBackBufferHeight = screenSize.Y;
-            graphics.ApplyChanges();
-            GraphicsDevice.Viewport = CalculateViewport(screenSize);
-            spriteScaleMatrix = Matrix.CreateScale((float)GraphicsDevice.Viewport.Width / gameWorldSize.X, (float)GraphicsDevice.Viewport.Height / gameWorldSize.Y, 1);
-        }
-        private Viewport CalculateViewport(Point windowSize)
-        {
-            Viewport viewport = new Viewport();
-            float gameAspectRatio = (float)gameWorldSize.X / (float)gameWorldSize.Y;
-            float windowAspectRatio = (float)windowSize.X / (float)windowSize.Y;
-            // If the window is wide use the full window height
-            if (windowAspectRatio > gameAspectRatio)
-            {
-                viewport.Width = (int)(windowSize.Y * gameAspectRatio);
-                viewport.Height = windowSize.Y;
-            }
-            // If the window is high, use the full window width
-            else
-            {
-                viewport.Width = windowSize.X;
-                viewport.Height = (int)(windowSize.X / gameAspectRatio);
-            }
-            viewport.X = (windowSize.X - viewport.Width) / 2;
-            viewport.Y = (windowSize.Y - viewport.Height) / 2;
-            return viewport;
-        }
-        /// <summary>
-        /// This method takes a position in a screen coordinates as a parameter and returns the matching position in gameWorld coordinates
-        /// </summary>
-        private Vector2 ScreenToGameWorld(Vector2 screenPosition)
-        {
-            Vector2 viewportTopLeft = new Vector2(GraphicsDevice.Viewport.X, GraphicsDevice.Viewport.Y);
-            float screenToWorldScale = (float)gameWorldSize.X / (float)GraphicsDevice.Viewport.Width;
-            return (screenPosition - viewportTopLeft) * screenToWorldScale;
-        }
+
         /// <summary>
         /// This method populates the gridOfJewels with the values 0, 1, or 2
         /// </summary>
@@ -164,7 +82,7 @@ namespace JewelJam
             {
                 for (int y = 0; y < GRID_HEIGHT; y++)
                 {
-                    gridOfJewels[x, y] = randomNumberGenerator.Next(3);
+                    gridOfJewels[x, y] = Random.Next(3);
                 }
             }
         }
@@ -195,7 +113,7 @@ namespace JewelJam
             // Populate the top row with random jewels
             for (int x = 0; x < GRID_WIDTH; x++)
             {
-                gridOfJewels[x, 0] = randomNumberGenerator.Next(3);
+                gridOfJewels[x, 0] = Random.Next(3);
             }
         }
         #endregion
