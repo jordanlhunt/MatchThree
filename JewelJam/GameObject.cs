@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace JewelJam;
 public class GameObject
 {
-    #region Members
+    #region Members Variables
     protected Vector2 velocity;
     #endregion
     #region Properties

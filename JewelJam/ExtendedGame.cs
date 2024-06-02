@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Keys = Microsoft.Xna.Framework.Input.Keys;
 using Point = Microsoft.Xna.Framework.Point;
+using Color = Microsoft.Xna.Framework.Color;
+
 namespace JewelJam;
 public class ExtendedGame : Game
 {
@@ -24,6 +28,8 @@ public class ExtendedGame : Game
     const int DEFAULT_WINDOW_WIDTH = 1024;
     const int DEFAULT_GAMEWORLD_HEIGHT = 768;
     const int DEFAULT_GAMEWORLD_WIDTH = 1024;
+
+    protected List<GameObject> gameWorld;
     #endregion
     #region Properties
     // Using the static keyword this property will be accessible everywhere
@@ -60,16 +66,23 @@ public class ExtendedGame : Game
         windowSize = new Point(DEFAULT_WINDOW_HEIGHT, DEFAULT_WINDOW_WIDTH);
         gameWorldSize = new Point(DEFAULT_GAMEWORLD_HEIGHT, DEFAULT_GAMEWORLD_WIDTH);
     }
+    #endregion
+    #region Public Methods
     protected override void LoadContent()
     {
         spriteBatch = new SpriteBatch(GraphicsDevice);
         // Store a static reference to the Content Manager;
         ContentManager = Content;
         IsFullScreen = false;
+        gameWorld = new List<GameObject>();
     }
     protected override void Update(GameTime gameTime)
     {
         HandleInput();
+        foreach (GameObject gameObject in gameWorld)
+        {
+            gameObject.Update(gameTime);
+        }
     }
     protected virtual void HandleInput()
     {
@@ -95,6 +108,12 @@ public class ExtendedGame : Game
         Vector2 viewportTopLeft = new Vector2(GraphicsDevice.Viewport.X, GraphicsDevice.Viewport.Y);
         float screenToWorldScale = (float)gameWorldSize.X / (float)GraphicsDevice.Viewport.Width;
         return (screenPosition - viewportTopLeft) * screenToWorldScale;
+    }
+
+    protected override void Draw(GameTime gameTime)
+    {
+        GraphicsDevice.Clear(Color.Black);
+
     }
     #endregion
     #region Private Methods

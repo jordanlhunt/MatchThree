@@ -27,7 +27,7 @@ namespace JewelJam
         static Random randomNumberGenerator;
         int[,] gridOfJewels;
         #endregion
-        #region Public Methods
+        #region Constructor
         public JewelJam()
         {
             IsMouseVisible = false;
@@ -35,6 +35,8 @@ namespace JewelJam
             jewelsArray = new Texture2D[3];
             PopulateGridOfJewels();
         }
+        #endregion
+        #region Public Methods
         protected override void Initialize()
         {
             base.Initialize();

@@ -2,10 +2,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 namespace JewelJam;
-
 public class GameObjectSprite : GameObject
 {
-    #region Members
+    #region Members Variables
     const float DRAW_SCALE = 1.0f;
     protected Texture2D sprite;
     protected Vector2 origin;
@@ -37,11 +36,9 @@ public class GameObjectSprite : GameObject
             // Add the sprites position to it as an offset
             spriteBounds.Offset(Position - origin);
             return spriteBounds;
-
         }
     }
     #endregion
-
     #region Constructor
     public GameObjectSprite(string spriteName)
     {
@@ -49,8 +46,7 @@ public class GameObjectSprite : GameObject
         origin = Vector2.Zero;
     }
     #endregion
-
-    #region Methods
+    #region Public Methods
     public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
     {
         if (IsVisible == true)
