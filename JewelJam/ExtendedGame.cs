@@ -8,7 +8,6 @@ using Microsoft.Xna.Framework.Input;
 using Keys = Microsoft.Xna.Framework.Input.Keys;
 using Point = Microsoft.Xna.Framework.Point;
 using Color = Microsoft.Xna.Framework.Color;
-
 namespace JewelJam;
 public class ExtendedGame : Game
 {
@@ -24,11 +23,12 @@ public class ExtendedGame : Game
     protected Point windowSize;
     // A matrix used for scaling the game world so that it fits inside the window
     protected Matrix spriteScaleMatrix;
+    // Texture2D to draw the cursor
+    protected Cursor cursor;
     const int DEFAULT_WINDOW_HEIGHT = 768;
     const int DEFAULT_WINDOW_WIDTH = 1024;
     const int DEFAULT_GAMEWORLD_HEIGHT = 768;
     const int DEFAULT_GAMEWORLD_WIDTH = 1024;
-
     protected List<GameObject> gameWorld;
     #endregion
     #region Properties
@@ -75,6 +75,7 @@ public class ExtendedGame : Game
         ContentManager = Content;
         IsFullScreen = false;
         gameWorld = new List<GameObject>();
+        cursor = new Cursor("pickaxe");
     }
     protected override void Update(GameTime gameTime)
     {
@@ -83,6 +84,7 @@ public class ExtendedGame : Game
         {
             gameObject.Update(gameTime);
         }
+        cursor.Update(gameTime);
     }
     protected virtual void HandleInput()
     {
@@ -96,9 +98,6 @@ public class ExtendedGame : Game
         {
             IsFullScreen = !IsFullScreen;
         }
-
-
-
     }
     /// <summary>
     /// This method takes a position in a screen coordinates as a parameter and returns the matching position in gameWorld coordinates
@@ -109,11 +108,17 @@ public class ExtendedGame : Game
         float screenToWorldScale = (float)gameWorldSize.X / (float)GraphicsDevice.Viewport.Width;
         return (screenPosition - viewportTopLeft) * screenToWorldScale;
     }
-
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.Black);
-
+        // start drawing sprites, applying the scaling matrix
+        spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, spriteScaleMatrix);
+        foreach (GameObject gameObject in gameWorld)
+        {
+            gameObject.Draw(gameTime, spriteBatch);
+        }
+        cursor.Draw(gameTime, spriteBatch, this, inputHandler);
+        spriteBatch.End();
     }
     #endregion
     #region Private Methods
@@ -159,6 +164,5 @@ public class ExtendedGame : Game
         viewport.Y = (windowSize.Y - viewport.Height) / 2;
         return viewport;
     }
-
     #endregion
 }
