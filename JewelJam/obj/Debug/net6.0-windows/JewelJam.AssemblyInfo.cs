@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JewelJam")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac68015da0b57622a24ccb3317c65677bbc91d2c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+259de7fc1eedbc6f6d7936a5c45edc04f52dacff")]
 [assembly: System.Reflection.AssemblyProductAttribute("JewelJam")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JewelJam")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

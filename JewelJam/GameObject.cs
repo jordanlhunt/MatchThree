@@ -18,6 +18,11 @@ public class GameObject
         get;
         set;
     }
+    public GameObject Parent
+    {
+        get;
+        set;
+    }
     #endregion
     #region Constructor
     public GameObject()

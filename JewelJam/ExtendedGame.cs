@@ -98,6 +98,11 @@ public class ExtendedGame : Game
         {
             IsFullScreen = !IsFullScreen;
         }
+
+        foreach (GameObject gameObject in gameWorld)
+        {
+            gameObject.HandleInput(inputHandler);
+        }
     }
     /// <summary>
     /// This method takes a position in a screen coordinates as a parameter and returns the matching position in gameWorld coordinates

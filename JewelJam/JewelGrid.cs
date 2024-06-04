@@ -37,8 +37,8 @@ public class JewelGrid : GameObject
             {
                 gridOfJewels[x, y] = new Jewel(ExtendedGame.Random.Next(3))
                 {
-                    // Set the position of each jewel
-                    Position = Position + new Vector2(x * CELL_SIZE, y * CELL_SIZE)
+                    Position = GetCellPosition(x, y),
+                    Parent = this
                 };
             }
         }
@@ -51,9 +51,50 @@ public class JewelGrid : GameObject
             jewel.Draw(gameTime, spriteBatch);
         }
     }
+
+    public override void HandleInput(InputHandler inputHandler)
+    {
+        if (inputHandler.IsKeyPressed(Microsoft.Xna.Framework.Input.Keys.Space))
+        {
+            MoveRowsDown();
+        }
+    }
+
+
+
     #endregion
 
     #region Private Methods
+    Vector2 GetCellPosition(int x, int y)
+    {
+        return Position + new Vector2(x * CELL_SIZE, y * CELL_SIZE);
+    }
+
+    /// <summary>
+    /// Moves all jewels one row down, and then refills the top row of the grid with new random jewels.
+    /// </summary>
+    void MoveRowsDown()
+    {
+        // shift all rows down
+        for (int y = GRID_HEIGHT - 1; y > 0; y--)
+        {
+            for (int x = 0; x < GRID_WIDTH; x++)
+            {
+                gridOfJewels[x, y] = gridOfJewels[x, y - 1];
+                gridOfJewels[x, y].Position = GetCellPosition(x, y);
+            }
+        }
+
+        // refill the top row
+        for (int x = 0; x < GRID_WIDTH; x++)
+        {
+            gridOfJewels[x, 0] = new Jewel(ExtendedGame.Random.Next(3))
+            {
+                Position = GetCellPosition(x, 0),
+                Parent = this
+            };
+        }
+    }
     #endregion
 
 
