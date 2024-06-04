@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\JewelJam.csproj": {}
+    "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\JewelJam.csproj": {}
   },
   "projects": {
-    "c:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\JewelJam.csproj": {
+    "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\JewelJam.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\JewelJam.csproj",
+        "projectUniqueName": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\JewelJam.csproj",
         "projectName": "JewelJam",
-        "projectPath": "c:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\JewelJam.csproj",
+        "projectPath": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\JewelJam.csproj",
         "packagesPath": "C:\\Users\\jorda\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\obj\\",
+        "outputPath": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
