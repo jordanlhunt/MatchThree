@@ -22,7 +22,7 @@ public class JewelGrid : GameObject
     #region Constructors
     public JewelGrid()
     {
-        Position = GRID_OFFSET;
+        LocalPosition = GRID_OFFSET;
         Reset();
     }
     #endregion
@@ -37,7 +37,7 @@ public class JewelGrid : GameObject
             {
                 gridOfJewels[x, y] = new Jewel(ExtendedGame.Random.Next(3))
                 {
-                    Position = GetCellPosition(x, y),
+                    LocalPosition = GetCellPosition(x, y),
                     Parent = this
                 };
             }
@@ -67,7 +67,7 @@ public class JewelGrid : GameObject
     #region Private Methods
     Vector2 GetCellPosition(int x, int y)
     {
-        return Position + new Vector2(x * CELL_SIZE, y * CELL_SIZE);
+        return new Vector2(x * CELL_SIZE, y * CELL_SIZE);
     }
 
     /// <summary>
@@ -81,7 +81,7 @@ public class JewelGrid : GameObject
             for (int x = 0; x < GRID_WIDTH; x++)
             {
                 gridOfJewels[x, y] = gridOfJewels[x, y - 1];
-                gridOfJewels[x, y].Position = GetCellPosition(x, y);
+                gridOfJewels[x, y].LocalPosition = GetCellPosition(x, y);
             }
         }
 
@@ -90,7 +90,7 @@ public class JewelGrid : GameObject
         {
             gridOfJewels[x, 0] = new Jewel(ExtendedGame.Random.Next(3))
             {
-                Position = GetCellPosition(x, 0),
+                LocalPosition = GetCellPosition(x, 0),
                 Parent = this
             };
         }

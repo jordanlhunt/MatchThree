@@ -34,7 +34,7 @@ public class GameObjectSprite : GameObject
         {
             Rectangle spriteBounds = sprite.Bounds;
             // Add the sprites position to it as an offset
-            spriteBounds.Offset(Position - origin);
+            spriteBounds.Offset(LocalPosition - origin);
             return spriteBounds;
         }
     }
@@ -51,7 +51,7 @@ public class GameObjectSprite : GameObject
     {
         if (IsVisible == true)
         {
-            spriteBatch.Draw(sprite, Position, null, Color.White, 0, origin, DRAW_SCALE, SpriteEffects.None, 0);
+            spriteBatch.Draw(sprite, GlobalPosition, null, Color.White, 0, origin, DRAW_SCALE, SpriteEffects.None, 0);
         }
     }
     #endregion

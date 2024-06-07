@@ -8,7 +8,7 @@ public class GameObject
     protected Vector2 velocity;
     #endregion
     #region Properties
-    public Vector2 Position
+    public Vector2 LocalPosition
     {
         get;
         set;
@@ -23,11 +23,26 @@ public class GameObject
         get;
         set;
     }
+
+    public Vector2 GlobalPosition
+    {
+        get
+        {
+            if (Parent == null)
+            {
+                return LocalPosition;
+            }
+            else
+            {
+                return LocalPosition + Parent.GlobalPosition;
+            }
+        }
+    }
     #endregion
     #region Constructor
     public GameObject()
     {
-        Position = Vector2.Zero;
+        LocalPosition = Vector2.Zero;
         velocity = Vector2.Zero;
         IsVisible = true;
     }
@@ -39,7 +54,7 @@ public class GameObject
 
     public virtual void Update(GameTime gameTime)
     {
-        Position += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
+        LocalPosition += velocity * (float)gameTime.ElapsedGameTime.TotalSeconds;
     }
 
     public virtual void Draw(GameTime gameTime, SpriteBatch spriteBatch)
