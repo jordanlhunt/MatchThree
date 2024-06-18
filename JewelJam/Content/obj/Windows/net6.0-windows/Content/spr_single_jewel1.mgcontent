@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>c:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/spr_single_jewel1.png</SourceFile>
+  <SourceFile>C:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/spr_single_jewel1.png</SourceFile>
   <SourceTime>2019-11-22T02:56:59-06:00</SourceTime>
-  <DestFile>c:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/bin/Windows/Content/spr_single_jewel1.xnb</DestFile>
-  <DestTime>2024-05-19T09:37:10.1131376-05:00</DestTime>
+  <DestFile>C:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/bin/Windows/Content/spr_single_jewel1.xnb</DestFile>
+  <DestTime>2024-06-10T07:29:53.5955036-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T06:44:56-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

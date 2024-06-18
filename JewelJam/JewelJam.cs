@@ -1,14 +1,5 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using ButtonState = Microsoft.Xna.Framework.Input.ButtonState;
-using Color = Microsoft.Xna.Framework.Color;
-using Keys = Microsoft.Xna.Framework.Input.Keys;
+﻿using JewelJam.Engine;
 using Point = Microsoft.Xna.Framework.Point;
-using Rectangle = Microsoft.Xna.Framework.Rectangle;
 namespace JewelJam
 {
     public class JewelJam : ExtendedGame
@@ -26,9 +17,9 @@ namespace JewelJam
         {
             base.LoadContent();
             GameObjectSprite backgroundTexture = new GameObjectSprite("spr_background");
-            gameWorld.Add(backgroundTexture);
+            gameWorld.AddChild(backgroundTexture);
             JewelGrid gridOfJewels = new JewelGrid();
-            gameWorld.Add(gridOfJewels);
+            gameWorld.AddChild(gridOfJewels);
             gameWorldSize = new Point(backgroundTexture.Width, backgroundTexture.Height);
             IsFullScreen = false;
         }

@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FD9369B9-6390-4A1A-9A7C-C7C6702963B9}|JewelJam.csproj|c:\\users\\jorda\\source\\repos\\csharp\\learningcsharpbyprogramminggames\\matchthree\\jeweljam\\extendedgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD9369B9-6390-4A1A-9A7C-C7C6702963B9}|JewelJam.csproj|solutionrelative:extendedgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD9369B9-6390-4A1A-9A7C-C7C6702963B9}|JewelJam.csproj|c:\\users\\jorda\\source\\repos\\csharp\\learningcsharpbyprogramminggames\\matchthree\\jeweljam\\engine\\extendedgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9369B9-6390-4A1A-9A7C-C7C6702963B9}|JewelJam.csproj|solutionrelative:engine\\extendedgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9369B9-6390-4A1A-9A7C-C7C6702963B9}|JewelJam.csproj|c:\\users\\jorda\\source\\repos\\csharp\\learningcsharpbyprogramminggames\\matchthree\\jeweljam\\engine\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9369B9-6390-4A1A-9A7C-C7C6702963B9}|JewelJam.csproj|solutionrelative:engine\\gameobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9369B9-6390-4A1A-9A7C-C7C6702963B9}|JewelJam.csproj|c:\\users\\jorda\\source\\repos\\csharp\\learningcsharpbyprogramminggames\\matchthree\\jeweljam\\engine\\gameobjectlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9369B9-6390-4A1A-9A7C-C7C6702963B9}|JewelJam.csproj|solutionrelative:engine\\gameobjectlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD9369B9-6390-4A1A-9A7C-C7C6702963B9}|JewelJam.csproj|c:\\users\\jorda\\source\\repos\\csharp\\learningcsharpbyprogramminggames\\matchthree\\jeweljam\\jeweljam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD9369B9-6390-4A1A-9A7C-C7C6702963B9}|JewelJam.csproj|solutionrelative:jeweljam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FD9369B9-6390-4A1A-9A7C-C7C6702963B9}|JewelJam.csproj|c:\\users\\jorda\\source\\repos\\csharp\\learningcsharpbyprogramminggames\\matchthree\\jeweljam\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -18,24 +30,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GameObject.cs",
+              "DocumentMoniker": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\Engine\\GameObject.cs",
+              "RelativeDocumentMoniker": "Engine\\GameObject.cs",
+              "ToolTip": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\Engine\\GameObject.cs",
+              "RelativeToolTip": "Engine\\GameObject.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T00:09:06.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "JewelJam.cs",
+              "DocumentMoniker": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\JewelJam.cs",
+              "RelativeDocumentMoniker": "JewelJam.cs",
+              "ToolTip": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\JewelJam.cs",
+              "RelativeToolTip": "JewelJam.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-17T23:43:23.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameObjectList.cs",
+              "DocumentMoniker": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\Engine\\GameObjectList.cs",
+              "RelativeDocumentMoniker": "Engine\\GameObjectList.cs",
+              "ToolTip": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\Engine\\GameObjectList.cs",
+              "RelativeToolTip": "Engine\\GameObjectList.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAtwCAAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T12:30:00.27Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ExtendedGame.cs",
-              "DocumentMoniker": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\ExtendedGame.cs",
-              "RelativeDocumentMoniker": "ExtendedGame.cs",
-              "ToolTip": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\ExtendedGame.cs",
-              "RelativeToolTip": "ExtendedGame.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAEAAAA",
+              "DocumentMoniker": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\Engine\\ExtendedGame.cs",
+              "RelativeDocumentMoniker": "Engine\\ExtendedGame.cs",
+              "ToolTip": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\Engine\\ExtendedGame.cs",
+              "RelativeToolTip": "Engine\\ExtendedGame.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAAAGMAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-22T18:13:48.301Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jorda\\source\\repos\\CSHARP\\LearningCSharpByProgrammingGames\\MatchThree\\JewelJam\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -43,7 +94,8 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T21:48:17.797Z"
+              "WhenOpened": "2024-05-18T21:48:17.797Z",
+              "EditorCaption": ""
             }
           ]
         }

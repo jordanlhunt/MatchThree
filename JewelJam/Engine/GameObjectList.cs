@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 
-namespace JewelJam;
+namespace JewelJam.Engine;
 
 public class GameObjectList : GameObject
 {
@@ -13,7 +12,7 @@ public class GameObjectList : GameObject
     #region Properties
     #endregion
     #region Constructor
-    public GameObject()
+    public GameObjectList()
     {
         children = new List<GameObject>();
     }

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-namespace JewelJam;
+namespace JewelJam.Engine;
 public class GameObjectSprite : GameObject
 {
     #region Members Variables

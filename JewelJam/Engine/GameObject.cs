@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-namespace JewelJam;
+namespace JewelJam.Engine;
 public class GameObject
 {
     #region Members Variables

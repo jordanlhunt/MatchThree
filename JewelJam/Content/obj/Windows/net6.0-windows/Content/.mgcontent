@@ -4,11 +4,11 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>c:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/pickaxe.png</File>
-    <File>c:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/spr_background.jpg</File>
-    <File>c:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/spr_single_jewel0.png</File>
-    <File>c:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/spr_single_jewel1.png</File>
-    <File>c:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/spr_single_jewel2.png</File>
+    <File>C:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/pickaxe.png</File>
+    <File>C:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/spr_background.jpg</File>
+    <File>C:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/spr_single_jewel0.png</File>
+    <File>C:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/spr_single_jewel1.png</File>
+    <File>C:/Users/jorda/source/repos/CSHARP/LearningCSharpByProgrammingGames/MatchThree/JewelJam/Content/spr_single_jewel2.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

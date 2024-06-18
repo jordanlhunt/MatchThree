@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
+using Color = Microsoft.Xna.Framework.Color;
 using Keys = Microsoft.Xna.Framework.Input.Keys;
 using Point = Microsoft.Xna.Framework.Point;
-using Color = Microsoft.Xna.Framework.Color;
-namespace JewelJam;
+namespace JewelJam.Engine;
 public class ExtendedGame : Game
 {
     #region Member Variables
@@ -29,7 +27,7 @@ public class ExtendedGame : Game
     const int DEFAULT_WINDOW_WIDTH = 1024;
     const int DEFAULT_GAMEWORLD_HEIGHT = 768;
     const int DEFAULT_GAMEWORLD_WIDTH = 1024;
-    protected List<GameObject> gameWorld;
+    protected GameObjectList gameWorld;
     #endregion
     #region Properties
     // Using the static keyword this property will be accessible everywhere
@@ -74,16 +72,13 @@ public class ExtendedGame : Game
         // Store a static reference to the Content Manager;
         ContentManager = Content;
         IsFullScreen = false;
-        gameWorld = new List<GameObject>();
+        gameWorld = new GameObjectList();
         cursor = new Cursor("pickaxe");
     }
     protected override void Update(GameTime gameTime)
     {
         HandleInput();
-        foreach (GameObject gameObject in gameWorld)
-        {
-            gameObject.Update(gameTime);
-        }
+        gameWorld.Update(gameTime);
         cursor.Update(gameTime);
     }
     protected virtual void HandleInput()
@@ -99,10 +94,7 @@ public class ExtendedGame : Game
             IsFullScreen = !IsFullScreen;
         }
 
-        foreach (GameObject gameObject in gameWorld)
-        {
-            gameObject.HandleInput(inputHandler);
-        }
+        gameWorld.HandleInput(inputHandler);
     }
     /// <summary>
     /// This method takes a position in a screen coordinates as a parameter and returns the matching position in gameWorld coordinates
@@ -110,7 +102,7 @@ public class ExtendedGame : Game
     public Vector2 ScreenToGameWorld(Vector2 screenPosition)
     {
         Vector2 viewportTopLeft = new Vector2(GraphicsDevice.Viewport.X, GraphicsDevice.Viewport.Y);
-        float screenToWorldScale = (float)gameWorldSize.X / (float)GraphicsDevice.Viewport.Width;
+        float screenToWorldScale = gameWorldSize.X / (float)GraphicsDevice.Viewport.Width;
         return (screenPosition - viewportTopLeft) * screenToWorldScale;
     }
     protected override void Draw(GameTime gameTime)
@@ -118,10 +110,7 @@ public class ExtendedGame : Game
         GraphicsDevice.Clear(Color.Black);
         // start drawing sprites, applying the scaling matrix
         spriteBatch.Begin(SpriteSortMode.Deferred, null, null, null, null, null, spriteScaleMatrix);
-        foreach (GameObject gameObject in gameWorld)
-        {
-            gameObject.Draw(gameTime, spriteBatch);
-        }
+        gameWorld.Draw(gameTime, spriteBatch);
         cursor.Draw(gameTime, spriteBatch, this, inputHandler);
         spriteBatch.End();
     }
@@ -151,8 +140,8 @@ public class ExtendedGame : Game
     private Viewport CalculateViewport(Point windowSize)
     {
         Viewport viewport = new Viewport();
-        float gameAspectRatio = (float)gameWorldSize.X / (float)gameWorldSize.Y;
-        float windowAspectRatio = (float)windowSize.X / (float)windowSize.Y;
+        float gameAspectRatio = gameWorldSize.X / (float)gameWorldSize.Y;
+        float windowAspectRatio = windowSize.X / (float)windowSize.Y;
         // If the window is wide use the full window height
         if (windowAspectRatio > gameAspectRatio)
         {

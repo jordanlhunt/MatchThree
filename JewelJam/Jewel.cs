@@ -1,4 +1,5 @@
 ﻿using System;
+using JewelJam.Engine;
 namespace JewelJam;
 public class Jewel : GameObjectSprite
 {
