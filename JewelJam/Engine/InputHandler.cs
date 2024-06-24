@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-namespace JewelJam
+namespace JewelJam.Engine
 {
     public class InputHandler
     {
